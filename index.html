@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Quiz</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+  <!-- Applicant Info Page -->
+  <div id="applicant-page">
+    <h1>Quiz Registration</h1>
+    <form id="applicant-form">
+      <input type="text" placeholder="Full Name" id="name" required>
+      <input type="text" placeholder="Father's Name" id="fname" required>
+      <input type="text" placeholder="Mother's Name" id="mname" required>
+      <input type="text" placeholder="Class" id="class" required>
+      <input type="text" placeholder="College/University" id="college" required>
+      <button type="submit">Proceed</button>
+    </form>
+  </div>
+
+  <!-- Guidelines Page -->
+  <div id="guidelines-page" class="hidden">
+    <h1>Quiz Guidelines & Test Pattern</h1>
+    <ul>
+      <li>Total Questions: 60</li>
+      <li>Time per Question: 1 Minute/60 Seconda</li>
+      <li>Total Quiz Time: 30 Minutes</li>
+      <li>Each Question has 4 options; select the correct one</li>
+      <li>You can use the <strong>Skip</strong> button to skip a question. Skipped questions will count as unanswered.</li>
+      <li>After submitting or skipping, the next question appears automatically.</li>
+      <li>Final score and certificate will be generated after completing the quiz.</li>
+      <li>Make sure to answer as many questions as possible before time runs out.</li>
+    </ul>
+    <button id="Q">Start Quiz</button>
+  </div>
+
+  <!-- Quiz Page -->
+  <div id="quiz-page" class="hidden">
+    <div class="quiz-header">
+      <div id="timer">01:00</div>
+      <div id="question-number">Question 1/30</div>
+    </div>
+    <div id="question-container">
+      <div id="question-text"></div>
+      <div id="options">
+        <button class="option-btn" data-index="0"></button>
+        <button class="option-btn" data-index="1"></button>
+        <button class="option-btn" data-index="2"></button>
+        <button class="option-btn" data-index="3"></button>
+      </div>
+    </div>
+    <div class="quiz-buttons">
+      <button id="skip-btn">Skip</button>
+      <button id="submit-btn">Submit & Next</button>
+    </div>
+  </div>
+
+  <!-- Result / Certificate Page -->
+  <div id="result-page" class="hidden">
+    <h1>Quiz Completed!</h1>
+    <p id="final-score"></p>
+    <button id="download-certificate">Download Certificate (PDF)</button>
+  </div>
+
+</div>
+<script src="script.js"></script>
+<!-- Footer -->
+  <footer class="custom-footer">
+    Made with ❤️ By Yadav Subba <br>
+    © | Online Quiz | All Rights Reserved
+  </footer>
+</body>
+</body>
+</html>
